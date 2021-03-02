@@ -131,6 +131,13 @@ utilmodule.getLatestAskPrice = (exchange, assetPair) ->
 #region basics
 utilmodule.plusPercentFactor = (percent) -> 0.01 * (100 + percent)
 
+############################################################
+utilmodule.getMinDif = (precision) ->
+    return 0 if precision == 0
+    zero = 0.0
+    minDif = zero.toFixed(precision-1) + 1
+    return parseFloat(minDif)
+
 #endregion
 
 #endregion
